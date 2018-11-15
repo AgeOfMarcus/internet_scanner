@@ -12,7 +12,7 @@ def my_thread(port, out_func=print):
 		while ip in ignore:
 			ip = tcp.rand_ipv4()
 		ignore.append(ip)
-		if knock(ip,port):
+		if tcp.knock(ip,port):
 			out_func(ip)
 
 def parse_args():
@@ -32,7 +32,7 @@ def parse_args():
 def main(args):
 	started = 0
 	while started < args.threads:
-		_thread.start_new_thread(my_thread, (args.port))
+		_thread.start_new_thread(my_thread, (args.port, ))
 		started += 1
 	while True:
 		try:
