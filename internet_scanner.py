@@ -13,7 +13,7 @@ def my_thread(port, out_func=print):
 			ip = tcp.rand_ipv4()
 		ignore.append(ip)
 		if tcp.knock(ip,port):
-			out_func(ip)
+			out_func(ip+":"+str(port))
 
 def parse_args():
 	parser = argparse.ArgumentParser()
