@@ -28,3 +28,4 @@ with open("sites.txt","w") as f:
 os.system(cmd)
 for i in to_open:
 	os.system("echo %s >> ignore.txt" % i)
+
